@@ -1,0 +1,25 @@
+;; -*- mode: scheme -*-
+
+(library (Data.Unfoldable1 foreign)
+  (export unfoldr1ArrayImpl)
+  (import (only (rnrs base) define lambda if set!)
+          (prefix (purs runtime srfi :214) srfi:214:)
+          (only (rnrs) do))
+
+  (define unfoldr1ArrayImpl
+    (lambda (isNothing)
+      (lambda (fromJust)
+        (lambda (fst)
+          (lambda (snd)
+            (lambda (f)
+              (lambda (b)
+                (define result (srfi:214:make-flexvector 0))
+                (define value (f b))
+                (define done #f)
+                (do () (done)
+                  (srfi:214:flexvector-add-back! result (fst value))
+                  (if (isNothing (snd value))
+                    (set! done #t)
+                    (set! value (f (fromJust (snd value))))))
+                result)))))))
+)
