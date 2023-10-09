@@ -1,0 +1,29 @@
+package:
+  dependencies:
+    - foldable-traversable
+    - maybe
+    - partial
+    - prelude
+    - tuples
+  name: unfoldable
+  test:
+    dependencies:
+      - assert
+      - console
+      - effect
+    main: Test.Main
+workspace:
+  backend:
+    cmd: purescm
+    args:
+      - "build"
+  extra_packages:
+    prelude:
+      git: https://github.com/purescm/purescript-prelude.git
+      ref: ab7dfc91e44096254caae017c2fce12d50ae114a
+    foldable-traversable:
+      git: https://github.com/purescm/purescript-foldable-traversable.git
+      ref: 218fb8f79f5eb85dfd9ede31d5767a71f2eeaa77
+  package_set:
+    url: https://raw.githubusercontent.com/purescm/purescm/master/package-sets/1.0.0.json
+    hash: sha256-5gMTC4NKrJeS47BIufFXQCqEoCbKD5aAPLGLruNNvRI=
