@@ -17,13 +17,7 @@ workspace:
     cmd: purescm
     args:
       - "build"
-  extra_packages:
-    prelude:
-      git: https://github.com/purescm/purescript-prelude.git
-      ref: ab7dfc91e44096254caae017c2fce12d50ae114a
-    foldable-traversable:
-      git: https://github.com/purescm/purescript-foldable-traversable.git
-      ref: 218fb8f79f5eb85dfd9ede31d5767a71f2eeaa77
   package_set:
     url: https://raw.githubusercontent.com/purescm/purescm/master/package-sets/1.0.0.json
-    hash: sha256-5gMTC4NKrJeS47BIufFXQCqEoCbKD5aAPLGLruNNvRI=
+    ref: e52f13a111051710612104c0d5068c5c7bc73893
+    hash: sha256-yxkZWmh2VQBGLsm7KE61xEZRNdLSmKEXV3kEwu9MyWE=
